@@ -1,0 +1,704 @@
+[
+  {
+    levelNum: 1,
+    targets: [5, 10, 15],
+    startVal: 5,
+    allowedOps: ['+', '-'],
+    obstacles: [],
+    speedMs: 280,
+    desc: "Welcome! Learn movement and basic arithmetic. Reach each target in sequence."
+  },
+  {
+    levelNum: 2,
+    targets: [8, 14, 20],
+    startVal: 4,
+    allowedOps: ['+', '-'],
+    obstacles: [
+      { x: 3, y: 3 }, { x: 16, y: 3 },
+      { x: 3, y: 16 }, { x: 16, y: 16 }
+    ],
+    speedMs: 270,
+    desc: "Four corner markers appeared. Keep snake length manageable."
+  },
+  {
+    levelNum: 3,
+    targets: [12, 18, 25],
+    startVal: 6,
+    allowedOps: ['+', '-'],
+    obstacles: [
+      { x: 5, y: 5 }, { x: 14, y: 5 },
+      { x: 5, y: 14 }, { x: 14, y: 14 }
+    ],
+    speedMs: 260,
+    desc: "Quadrant pillars introduced. Match target totals without hitting walls."
+  },
+  {
+    levelNum: 4,
+    targets: [15, 22, 30],
+    startVal: 7,
+    allowedOps: ['+', '-'],
+    obstacles: [
+      { x: 6, y: 4 }, { x: 7, y: 4 }, { x: 8, y: 4 }, { x: 11, y: 4 }, { x: 12, y: 4 }, { x: 13, y: 4 },
+      { x: 6, y: 15 }, { x: 7, y: 15 }, { x: 8, y: 15 }, { x: 11, y: 15 }, { x: 12, y: 15 }, { x: 13, y: 15 }
+    ],
+    speedMs: 250,
+    desc: "Horizontal guard rails installed top and bottom. Mind your turning radius."
+  },
+  {
+    levelNum: 5,
+    targets: [18, 27, 35],
+    startVal: 8,
+    allowedOps: ['+', '-'],
+    obstacles: [
+      { x: 4, y: 6 }, { x: 4, y: 7 }, { x: 4, y: 8 }, { x: 4, y: 11 }, { x: 4, y: 12 }, { x: 4, y: 13 },
+      { x: 15, y: 6 }, { x: 15, y: 7 }, { x: 15, y: 8 }, { x: 15, y: 11 }, { x: 15, y: 12 }, { x: 15, y: 13 }
+    ],
+    speedMs: 240,
+    desc: "Vertical flank barriers restrict side movement. Maintain careful arithmetic."
+  },
+
+  {
+    levelNum: 6,
+    targets: [20, 28, 38],
+    startVal: 10,
+    allowedOps: ['+', '-'],
+    obstacles: [
+      { x: 3, y: 3 }, { x: 4, y: 3 }, { x: 3, y: 4 },
+      { x: 16, y: 3 }, { x: 15, y: 3 }, { x: 16, y: 4 },
+      { x: 3, y: 16 }, { x: 4, y: 16 }, { x: 3, y: 15 },
+      { x: 16, y: 16 }, { x: 15, y: 16 }, { x: 16, y: 15 }
+    ],
+    speedMs: 230,
+    desc: "Corner L-barriers create tight pockets. Plan your trajectory early."
+  },
+  {
+    levelNum: 7,
+    targets: [24, 32, 42],
+    startVal: 9,
+    allowedOps: ['+', '-'],
+    obstacles: [
+      { x: 5, y: 5 }, { x: 5, y: 6 }, { x: 6, y: 5 },
+      { x: 14, y: 5 }, { x: 14, y: 6 }, { x: 13, y: 5 },
+      { x: 5, y: 14 }, { x: 5, y: 13 }, { x: 6, y: 14 },
+      { x: 14, y: 14 }, { x: 14, y: 13 }, { x: 13, y: 14 }
+    ],
+    speedMs: 220,
+    desc: "Quadrant blockades. Watch segment count when changing equations."
+  },
+  {
+    levelNum: 8,
+    targets: [25, 35, 45],
+    startVal: 10,
+    allowedOps: ['+', '-'],
+    obstacles: [
+      { x: 2, y: 6 }, { x: 3, y: 6 }, { x: 4, y: 6 }, { x: 5, y: 6 },
+      { x: 14, y: 6 }, { x: 15, y: 6 }, { x: 16, y: 6 }, { x: 17, y: 6 },
+      { x: 2, y: 13 }, { x: 3, y: 13 }, { x: 4, y: 13 }, { x: 5, y: 13 },
+      { x: 14, y: 13 }, { x: 15, y: 13 }, { x: 16, y: 13 }, { x: 17, y: 13 }
+    ],
+    speedMs: 210,
+    desc: "Double horizontal channels. Split corridor movement."
+  },
+  {
+    levelNum: 9,
+    targets: [28, 40, 50],
+    startVal: 12,
+    allowedOps: ['+', '-'],
+    obstacles: [
+      { x: 6, y: 2 }, { x: 6, y: 3 }, { x: 6, y: 4 }, { x: 6, y: 5 },
+      { x: 13, y: 2 }, { x: 13, y: 3 }, { x: 13, y: 4 }, { x: 13, y: 5 },
+      { x: 6, y: 14 }, { x: 6, y: 15 }, { x: 6, y: 16 }, { x: 6, y: 17 },
+      { x: 13, y: 14 }, { x: 13, y: 15 }, { x: 13, y: 16 }, { x: 13, y: 17 }
+    ],
+    speedMs: 200,
+    desc: "Twin vertical gates. Steering precision is paramount."
+  },
+  {
+    levelNum: 10,
+    targets: [30, 45, 60],
+    startVal: 15,
+    allowedOps: ['+', '-'],
+    obstacles: [
+      { x: 7, y: 7 }, { x: 8, y: 7 }, { x: 11, y: 7 }, { x: 12, y: 7 },
+      { x: 7, y: 12 }, { x: 8, y: 12 }, { x: 11, y: 12 }, { x: 12, y: 12 },
+      { x: 7, y: 8 }, { x: 7, y: 11 }, { x: 12, y: 8 }, { x: 12, y: 11 }
+    ],
+    speedMs: 195,
+    desc: "Inner ring perimeter. Collect operators carefully in restricted space."
+  },
+
+  {
+    levelNum: 11,
+    targets: [12, 24, 36],
+    startVal: 3,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 2, y: 2 }, { x: 17, y: 2 },
+      { x: 2, y: 17 }, { x: 17, y: 17 }
+    ],
+    speedMs: 190,
+    desc: "Multiplication unlocked! Scale numbers rapidly using '*'. Start simple."
+  },
+  {
+    levelNum: 12,
+    targets: [16, 32, 48],
+    startVal: 4,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 5, y: 5 }, { x: 6, y: 5 }, { x: 5, y: 6 },
+      { x: 14, y: 5 }, { x: 13, y: 5 }, { x: 14, y: 6 },
+      { x: 5, y: 14 }, { x: 6, y: 14 }, { x: 5, y: 13 },
+      { x: 14, y: 14 }, { x: 13, y: 14 }, { x: 14, y: 13 }
+    ],
+    speedMs: 185,
+    desc: "Double digit targets require active multiplication chaining."
+  },
+  {
+    levelNum: 13,
+    targets: [20, 40, 60],
+    startVal: 2,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 3, y: 8 }, { x: 4, y: 8 }, { x: 5, y: 8 },
+      { x: 14, y: 8 }, { x: 15, y: 8 }, { x: 16, y: 8 },
+      { x: 3, y: 11 }, { x: 4, y: 11 }, { x: 5, y: 11 },
+      { x: 14, y: 11 }, { x: 15, y: 11 }, { x: 16, y: 11 }
+    ],
+    speedMs: 180,
+    desc: "Side choke points. Multiply to reach large goals quickly."
+  },
+  {
+    levelNum: 14,
+    targets: [25, 50, 75],
+    startVal: 5,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 10, y: 3 }, { x: 10, y: 4 }, { x: 10, y: 5 }, { x: 10, y: 6 },
+      { x: 10, y: 13 }, { x: 10, y: 14 }, { x: 10, y: 15 }, { x: 10, y: 16 }
+    ],
+    speedMs: 175,
+    desc: "Central spine layout divides the field vertically."
+  },
+  {
+    levelNum: 15,
+    targets: [30, 60, 90],
+    startVal: 6,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 3, y: 10 }, { x: 4, y: 10 }, { x: 5, y: 10 }, { x: 6, y: 10 },
+      { x: 13, y: 10 }, { x: 14, y: 10 }, { x: 15, y: 10 }, { x: 16, y: 10 }
+    ],
+    speedMs: 170,
+    desc: "Horizontal divider spine. High precision turn timing."
+  },
+
+  {
+    levelNum: 16,
+    targets: [36, 72, 108],
+    startVal: 4,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 4, y: 4 }, { x: 5, y: 4 }, { x: 4, y: 5 },
+      { x: 15, y: 4 }, { x: 14, y: 4 }, { x: 15, y: 5 },
+      { x: 4, y: 15 }, { x: 5, y: 15 }, { x: 4, y: 14 },
+      { x: 15, y: 15 }, { x: 14, y: 15 }, { x: 15, y: 14 },
+      { x: 9, y: 9 }, { x: 10, y: 9 }, { x: 9, y: 10 }, { x: 10, y: 10 }
+    ],
+    speedMs: 165,
+    desc: "Central diamond post added. Keep math positive while maneuvering."
+  },
+  {
+    levelNum: 17,
+    targets: [42, 84, 126],
+    startVal: 7,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 2, y: 5 }, { x: 3, y: 5 }, { x: 4, y: 5 }, { x: 5, y: 5 }, { x: 6, y: 5 },
+      { x: 13, y: 5 }, { x: 14, y: 5 }, { x: 15, y: 5 }, { x: 16, y: 5 }, { x: 17, y: 5 },
+      { x: 2, y: 14 }, { x: 3, y: 14 }, { x: 4, y: 14 }, { x: 5, y: 14 }, { x: 6, y: 14 },
+      { x: 13, y: 14 }, { x: 14, y: 14 }, { x: 15, y: 14 }, { x: 16, y: 14 }, { x: 17, y: 14 }
+    ],
+    speedMs: 160,
+    desc: "Long horizontal rails create strict middle and outer zones."
+  },
+  {
+    levelNum: 18,
+    targets: [45, 90, 135],
+    startVal: 5,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 5, y: 2 }, { x: 5, y: 3 }, { x: 5, y: 4 }, { x: 5, y: 5 }, { x: 5, y: 6 },
+      { x: 14, y: 2 }, { x: 14, y: 3 }, { x: 14, y: 4 }, { x: 14, y: 5 }, { x: 14, y: 6 },
+      { x: 5, y: 13 }, { x: 5, y: 14 }, { x: 5, y: 15 }, { x: 5, y: 16 }, { x: 5, y: 17 },
+      { x: 14, y: 13 }, { x: 14, y: 14 }, { x: 14, y: 15 }, { x: 14, y: 16 }, { x: 14, y: 17 }
+    ],
+    speedMs: 155,
+    desc: "Long vertical pillars. Use sub-totals to prevent overshooting."
+  },
+  {
+    levelNum: 19,
+    targets: [50, 100, 150],
+    startVal: 10,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 8, y: 4 }, { x: 9, y: 4 }, { x: 10, y: 4 }, { x: 11, y: 4 },
+      { x: 8, y: 15 }, { x: 9, y: 15 }, { x: 10, y: 15 }, { x: 11, y: 15 },
+      { x: 4, y: 8 }, { x: 4, y: 9 }, { x: 4, y: 10 }, { x: 4, y: 11 },
+      { x: 15, y: 8 }, { x: 15, y: 9 }, { x: 15, y: 10 }, { x: 15, y: 11 }
+    ],
+    speedMs: 150,
+    desc: "4-sided gateway layout. Requires sharp tactical adjustments."
+  },
+  {
+    levelNum: 20,
+    targets: [64, 128, 192],
+    startVal: 8,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 6, y: 6 }, { x: 7, y: 6 }, { x: 8, y: 6 }, { x: 11, y: 6 }, { x: 12, y: 6 }, { x: 13, y: 6 },
+      { x: 6, y: 13 }, { x: 7, y: 13 }, { x: 8, y: 13 }, { x: 11, y: 13 }, { x: 12, y: 13 }, { x: 13, y: 13 },
+      { x: 6, y: 7 }, { x: 6, y: 8 }, { x: 6, y: 11 }, { x: 6, y: 12 },
+      { x: 13, y: 7 }, { x: 13, y: 8 }, { x: 13, y: 11 }, { x: 13, y: 12 }
+    ],
+    speedMs: 145,
+    desc: "Central chamber box. Target values reach near 200."
+  },
+
+  {
+    levelNum: 21,
+    targets: [55, 110, 165],
+    startVal: 5,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 2, y: 2 }, { x: 3, y: 2 }, { x: 4, y: 2 }, { x: 2, y: 3 }, { x: 2, y: 4 },
+      { x: 17, y: 2 }, { x: 16, y: 2 }, { x: 15, y: 2 }, { x: 17, y: 3 }, { x: 17, y: 4 },
+      { x: 2, y: 17 }, { x: 3, y: 17 }, { x: 4, y: 17 }, { x: 2, y: 16 }, { x: 2, y: 15 },
+      { x: 17, y: 17 }, { x: 16, y: 17 }, { x: 15, y: 17 }, { x: 17, y: 16 }, { x: 17, y: 15 },
+      { x: 8, y: 8 }, { x: 11, y: 8 }, { x: 8, y: 11 }, { x: 11, y: 11 }
+    ],
+    speedMs: 140,
+    desc: "Windmill corners and inner pins. Faster game speed."
+  },
+  {
+    levelNum: 22,
+    targets: [70, 140, 210],
+    startVal: 7,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 3, y: 3 }, { x: 5, y: 3 }, { x: 7, y: 3 }, { x: 12, y: 3 }, { x: 14, y: 3 }, { x: 16, y: 3 },
+      { x: 3, y: 16 }, { x: 5, y: 16 }, { x: 7, y: 16 }, { x: 12, y: 16 }, { x: 14, y: 16 }, { x: 16, y: 16 },
+      { x: 3, y: 7 }, { x: 3, y: 12 }, { x: 16, y: 7 }, { x: 16, y: 12 }
+    ],
+    speedMs: 135,
+    desc: "Dotted grid posts test fine spatial movement."
+  },
+  {
+    levelNum: 23,
+    targets: [75, 125, 225],
+    startVal: 5,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 5, y: 4 }, { x: 6, y: 4 }, { x: 7, y: 4 }, { x: 8, y: 4 }, { x: 9, y: 4 },
+      { x: 10, y: 15 }, { x: 11, y: 15 }, { x: 12, y: 15 }, { x: 13, y: 15 }, { x: 14, y: 15 },
+      { x: 4, y: 10 }, { x: 4, y: 11 }, { x: 4, y: 12 }, { x: 4, y: 13 }, { x: 4, y: 14 },
+      { x: 15, y: 5 }, { x: 15, y: 6 }, { x: 15, y: 7 }, { x: 15, y: 8 }, { x: 15, y: 9 }
+    ],
+    speedMs: 130,
+    desc: "Staggered labyrinth arms. Use self-splicing to survive if trapped!"
+  },
+  {
+    levelNum: 24,
+    targets: [80, 160, 240],
+    startVal: 8,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 7, y: 3 }, { x: 8, y: 3 }, { x: 11, y: 3 }, { x: 12, y: 3 },
+      { x: 3, y: 7 }, { x: 3, y: 8 }, { x: 3, y: 11 }, { x: 3, y: 12 },
+      { x: 16, y: 7 }, { x: 16, y: 8 }, { x: 16, y: 11 }, { x: 16, y: 12 },
+      { x: 7, y: 16 }, { x: 8, y: 16 }, { x: 11, y: 16 }, { x: 12, y: 16 }
+    ],
+    speedMs: 125,
+    desc: "Outer fortress gates. High speed arithmetic."
+  },
+  {
+    levelNum: 25,
+    targets: [90, 180, 270],
+    startVal: 9,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 6, y: 2 }, { x: 7, y: 2 }, { x: 8, y: 2 }, { x: 11, y: 2 }, { x: 12, y: 2 }, { x: 13, y: 2 },
+      { x: 2, y: 6 }, { x: 2, y: 7 }, { x: 2, y: 8 }, { x: 2, y: 11 }, { x: 2, y: 12 }, { x: 2, y: 13 },
+      { x: 17, y: 6 }, { x: 17, y: 7 }, { x: 17, y: 8 }, { x: 17, y: 11 }, { x: 17, y: 12 }, { x: 17, y: 13 },
+      { x: 6, y: 17 }, { x: 7, y: 17 }, { x: 8, y: 17 }, { x: 11, y: 17 }, { x: 12, y: 17 }, { x: 13, y: 17 },
+      { x: 9, y: 7 }, { x: 10, y: 7 }, { x: 9, y: 12 }, { x: 10, y: 12 }
+    ],
+    speedMs: 120,
+    desc: "Halfway point milestone! Multi-step target calculations required."
+  },
+
+  {
+    levelNum: 26,
+    targets: [85, 170, 255],
+    startVal: 5,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 5, y: 5 }, { x: 6, y: 5 }, { x: 7, y: 5 }, { x: 8, y: 5 }, { x: 9, y: 5 },
+      { x: 10, y: 14 }, { x: 11, y: 14 }, { x: 12, y: 14 }, { x: 13, y: 14 }, { x: 14, y: 14 },
+      { x: 5, y: 6 }, { x: 5, y: 7 }, { x: 5, y: 8 }, { x: 5, y: 9 },
+      { x: 14, y: 10 }, { x: 14, y: 11 }, { x: 14, y: 12 }, { x: 14, y: 13 }
+    ],
+    speedMs: 118,
+    desc: "Concentric zigzag path. High risk of self-collision."
+  },
+  {
+    levelNum: 27,
+    targets: [96, 192, 288],
+    startVal: 6,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 3, y: 3 }, { x: 3, y: 4 }, { x: 3, y: 5 }, { x: 3, y: 6 }, { x: 3, y: 7 },
+      { x: 16, y: 12 }, { x: 16, y: 13 }, { x: 16, y: 14 }, { x: 16, y: 15 }, { x: 16, y: 16 },
+      { x: 3, y: 16 }, { x: 4, y: 16 }, { x: 5, y: 16 }, { x: 6, y: 16 }, { x: 7, y: 16 },
+      { x: 12, y: 3 }, { x: 13, y: 3 }, { x: 14, y: 3 }, { x: 15, y: 3 }, { x: 16, y: 3 }
+    ],
+    speedMs: 115,
+    desc: "Outer hook anchors. Use subtraction if equation exceeds target."
+  },
+  {
+    levelNum: 28,
+    targets: [100, 200, 300],
+    startVal: 10,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 8, y: 2 }, { x: 8, y: 3 }, { x: 8, y: 4 }, { x: 8, y: 5 }, { x: 8, y: 6 }, { x: 8, y: 7 },
+      { x: 11, y: 12 }, { x: 11, y: 13 }, { x: 11, y: 14 }, { x: 11, y: 15 }, { x: 11, y: 16 }, { x: 11, y: 17 },
+      { x: 2, y: 8 }, { x: 3, y: 8 }, { x: 4, y: 8 }, { x: 5, y: 8 }, { x: 6, y: 8 }, { x: 7, y: 8 },
+      { x: 12, y: 11 }, { x: 13, y: 11 }, { x: 14, y: 11 }, { x: 15, y: 11 }, { x: 16, y: 11 }, { x: 17, y: 11 }
+    ],
+    speedMs: 112,
+    desc: "Double interlocking T-barriers. Fast response required."
+  },
+  {
+    levelNum: 29,
+    targets: [110, 220, 330],
+    startVal: 11,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 4, y: 4 }, { x: 8, y: 4 }, { x: 11, y: 4 }, { x: 15, y: 4 },
+      { x: 4, y: 8 }, { x: 8, y: 8 }, { x: 11, y: 8 }, { x: 15, y: 8 },
+      { x: 4, y: 11 }, { x: 8, y: 11 }, { x: 11, y: 11 }, { x: 15, y: 11 },
+      { x: 4, y: 15 }, { x: 8, y: 15 }, { x: 11, y: 15 }, { x: 15, y: 15 }
+    ],
+    speedMs: 110,
+    desc: "Matrix grid array. Clear sightlines, dense collision matrix."
+  },
+  {
+    levelNum: 30,
+    targets: [120, 240, 360],
+    startVal: 12,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 6, y: 4 }, { x: 7, y: 4 }, { x: 8, y: 4 }, { x: 9, y: 4 }, { x: 10, y: 4 }, { x: 11, y: 4 }, { x: 12, y: 4 }, { x: 13, y: 4 },
+      { x: 6, y: 15 }, { x: 7, y: 15 }, { x: 8, y: 15 }, { x: 9, y: 15 }, { x: 10, y: 15 }, { x: 11, y: 15 }, { x: 12, y: 15 }, { x: 13, y: 15 },
+      { x: 4, y: 6 }, { x: 4, y: 7 }, { x: 4, y: 8 }, { x: 4, y: 9 }, { x: 4, y: 10 }, { x: 4, y: 11 }, { x: 4, y: 12 }, { x: 4, y: 13 },
+      { x: 15, y: 6 }, { x: 15, y: 7 }, { x: 15, y: 8 }, { x: 15, y: 9 }, { x: 15, y: 10 }, { x: 15, y: 11 }, { x: 15, y: 12 }, { x: 15, y: 13 }
+    ],
+    speedMs: 108,
+    desc: "Great Wall perimeter enclosure. Fast tight turns."
+  },
+
+  {
+    levelNum: 31,
+    targets: [125, 250, 375],
+    startVal: 5,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 2, y: 2 }, { x: 3, y: 3 }, { x: 4, y: 4 }, { x: 5, y: 5 },
+      { x: 17, y: 2 }, { x: 16, y: 3 }, { x: 15, y: 4 }, { x: 14, y: 5 },
+      { x: 2, y: 17 }, { x: 3, y: 16 }, { x: 4, y: 15 }, { x: 5, y: 14 },
+      { x: 17, y: 17 }, { x: 16, y: 16 }, { x: 15, y: 15 }, { x: 14, y: 14 }
+    ],
+    speedMs: 105,
+    desc: "Diagonal corner teeth. Targets scale above 300."
+  },
+  {
+    levelNum: 32,
+    targets: [133, 266, 399],
+    startVal: 7,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 9, y: 2 }, { x: 10, y: 2 }, { x: 9, y: 3 }, { x: 10, y: 3 },
+      { x: 9, y: 16 }, { x: 10, y: 16 }, { x: 9, y: 17 }, { x: 10, y: 17 },
+      { x: 2, y: 9 }, { x: 2, y: 10 }, { x: 3, y: 9 }, { x: 3, y: 10 },
+      { x: 16, y: 9 }, { x: 16, y: 10 }, { x: 17, y: 9 }, { x: 17, y: 10 },
+      { x: 8, y: 8 }, { x: 11, y: 8 }, { x: 8, y: 11 }, { x: 11, y: 11 }
+    ],
+    speedMs: 102,
+    desc: "Odd prime-multiple targets require careful multiplication and addition."
+  },
+  {
+    levelNum: 33,
+    targets: [144, 288, 432],
+    startVal: 12,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 5, y: 2 }, { x: 5, y: 3 }, { x: 5, y: 4 }, { x: 5, y: 5 }, { x: 5, y: 6 }, { x: 5, y: 7 },
+      { x: 14, y: 12 }, { x: 14, y: 13 }, { x: 14, y: 14 }, { x: 14, y: 15 }, { x: 14, y: 16 }, { x: 14, y: 17 },
+      { x: 2, y: 14 }, { x: 3, y: 14 }, { x: 4, y: 14 }, { x: 5, y: 14 }, { x: 6, y: 14 }, { x: 7, y: 14 },
+      { x: 12, y: 5 }, { x: 13, y: 5 }, { x: 14, y: 5 }, { x: 15, y: 5 }, { x: 16, y: 5 }, { x: 17, y: 5 }
+    ],
+    speedMs: 100,
+    desc: "Pinwheel labyrinth arms. Sub-100ms game speed approaching."
+  },
+  {
+    levelNum: 34,
+    targets: [150, 300, 450],
+    startVal: 10,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 3, y: 5 }, { x: 4, y: 5 }, { x: 5, y: 5 }, { x: 6, y: 5 }, { x: 7, y: 5 }, { x: 8, y: 5 },
+      { x: 11, y: 14 }, { x: 12, y: 14 }, { x: 13, y: 14 }, { x: 14, y: 14 }, { x: 15, y: 14 }, { x: 16, y: 14 },
+      { x: 5, x: 8 }, { x: 5, y: 9 }, { x: 5, y: 10 }, { x: 5, y: 11 }, { x: 5, y: 12 },
+      { x: 14, y: 7 }, { x: 14, y: 8 }, { x: 14, y: 9 }, { x: 14, y: 10 }, { x: 14, y: 11 }
+    ],
+    speedMs: 98,
+    desc: "Staggered barricades. High-speed math decision making."
+  },
+  {
+    levelNum: 35,
+    targets: [160, 320, 480],
+    startVal: 8,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 7, y: 2 }, { x: 8, y: 2 }, { x: 11, y: 2 }, { x: 12, y: 2 },
+      { x: 7, y: 17 }, { x: 8, y: 17 }, { x: 11, y: 17 }, { x: 12, y: 17 },
+      { x: 2, y: 7 }, { x: 2, y: 8 }, { x: 2, y: 11 }, { x: 2, y: 12 },
+      { x: 17, y: 7 }, { x: 17, y: 8 }, { x: 17, y: 11 }, { x: 17, y: 12 },
+      { x: 7, y: 7 }, { x: 12, y: 7 }, { x: 7, y: 12 }, { x: 12, y: 12 }
+    ],
+    speedMs: 95,
+    desc: "Double ring chamber layout."
+  },
+
+  {
+    levelNum: 36,
+    targets: [175, 350, 525],
+    startVal: 5,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 4, y: 2 }, { x: 5, y: 2 }, { x: 6, y: 2 }, { x: 13, y: 2 }, { x: 14, y: 2 }, { x: 15, y: 2 },
+      { x: 4, y: 17 }, { x: 5, y: 17 }, { x: 6, y: 17 }, { x: 13, y: 17 }, { x: 14, y: 17 }, { x: 15, y: 17 },
+      { x: 2, y: 4 }, { x: 2, y: 5 }, { x: 2, y: 6 }, { x: 2, y: 13 }, { x: 2, y: 14 }, { x: 2, y: 15 },
+      { x: 17, y: 4 }, { x: 17, y: 5 }, { x: 17, y: 6 }, { x: 17, y: 13 }, { x: 17, y: 14 }, { x: 17, y: 15 },
+      { x: 8, y: 7 }, { x: 9, y: 7 }, { x: 10, y: 7 }, { x: 11, y: 7 },
+      { x: 8, y: 12 }, { x: 9, y: 12 }, { x: 10, y: 12 }, { x: 11, y: 12 }
+    ],
+    speedMs: 92,
+    desc: "Outer teeth and inner bars. Master target values exceed 500."
+  },
+  {
+    levelNum: 37,
+    targets: [180, 360, 540],
+    startVal: 9,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 5, y: 3 }, { x: 6, y: 3 }, { x: 7, y: 3 }, { x: 8, y: 3 }, { x: 11, y: 3 }, { x: 12, y: 3 }, { x: 13, y: 3 }, { x: 14, y: 3 },
+      { x: 5, y: 16 }, { x: 6, y: 16 }, { x: 7, y: 16 }, { x: 8, y: 16 }, { x: 11, y: 16 }, { x: 12, y: 16 }, { x: 13, y: 16 }, { x: 14, y: 16 },
+      { x: 3, y: 5 }, { x: 3, y: 6 }, { x: 3, y: 7 }, { x: 3, y: 8 }, { x: 3, y: 11 }, { x: 3, y: 12 }, { x: 3, y: 13 }, { x: 3, y: 14 },
+      { x: 16, y: 5 }, { x: 16, y: 6 }, { x: 16, y: 7 }, { x: 16, y: 8 }, { x: 16, y: 11 }, { x: 16, y: 12 }, { x: 16, y: 13 }, { x: 16, y: 14 }
+    ],
+    speedMs: 90,
+    desc: "Spacious central arena with narrow corner escapes."
+  },
+  {
+    levelNum: 38,
+    targets: [192, 384, 576],
+    startVal: 6,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 2, y: 2 }, { x: 17, y: 2 }, { x: 2, y: 17 }, { x: 17, y: 17 },
+      { x: 6, y: 6 }, { x: 13, y: 6 }, { x: 6, y: 13 }, { x: 13, y: 13 },
+      { x: 8, y: 4 }, { x: 9, y: 4 }, { x: 10, y: 4 }, { x: 11, y: 4 },
+      { x: 8, y: 15 }, { x: 9, y: 15 }, { x: 10, y: 15 }, { x: 11, y: 15 }
+    ],
+    speedMs: 88,
+    desc: "Diamond lattice layout. Extreme reflex speed required."
+  },
+  {
+    levelNum: 39,
+    targets: [200, 400, 600],
+    startVal: 10,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 10, y: 2 }, { x: 10, y: 3 }, { x: 10, y: 4 }, { x: 10, y: 5 }, { x: 10, y: 6 }, { x: 10, y: 7 },
+      { x: 10, y: 12 }, { x: 10, y: 13 }, { x: 10, y: 14 }, { x: 10, y: 15 }, { x: 10, y: 16 }, { x: 10, y: 17 },
+      { x: 2, y: 10 }, { x: 3, y: 10 }, { x: 4, y: 10 }, { x: 5, y: 10 }, { x: 6, y: 10 }, { x: 7, y: 10 },
+      { x: 12, y: 10 }, { x: 13, y: 10 }, { x: 14, y: 10 }, { x: 15, y: 10 }, { x: 16, y: 10 }, { x: 17, y: 10 }
+    ],
+    speedMs: 85,
+    desc: "Crossfire barricade. Maximum speed tactical maneuvering."
+  },
+  {
+    levelNum: 40,
+    targets: [210, 420, 630],
+    startVal: 7,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 4, y: 3 }, { x: 5, y: 3 }, { x: 6, y: 3 }, { x: 7, y: 3 }, { x: 8, y: 3 }, { x: 9, y: 3 }, { x: 10, y: 3 }, { x: 11, y: 3 }, { x: 12, y: 3 }, { x: 13, y: 3 }, { x: 14, y: 3 }, { x: 15, y: 3 },
+      { x: 4, y: 16 }, { x: 5, y: 16 }, { x: 6, y: 16 }, { x: 7, y: 16 }, { x: 8, y: 16 }, { x: 9, y: 16 }, { x: 10, y: 16 }, { x: 11, y: 16 }, { x: 12, y: 16 }, { x: 13, y: 16 }, { x: 14, y: 16 }, { x: 15, y: 16 },
+      { x: 3, y: 6 }, { x: 3, y: 7 }, { x: 3, y: 8 }, { x: 3, y: 11 }, { x: 3, y: 12 }, { x: 3, y: 13 },
+      { x: 16, y: 6 }, { x: 16, y: 7 }, { x: 16, y: 8 }, { x: 16, y: 11 }, { x: 16, y: 12 }, { x: 16, y: 13 }
+    ],
+    speedMs: 83,
+    desc: "The Crucible. Narrow boundary corridors."
+  },
+
+  {
+    levelNum: 41,
+    targets: [225, 450, 675],
+    startVal: 5,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 5, y: 5 }, { x: 6, y: 5 }, { x: 7, y: 5 }, { x: 8, y: 5 },
+      { x: 11, y: 5 }, { x: 12, y: 5 }, { x: 13, y: 5 }, { x: 14, y: 5 },
+      { x: 5, y: 14 }, { x: 6, y: 14 }, { x: 7, y: 14 }, { x: 8, y: 14 },
+      { x: 11, y: 14 }, { x: 12, y: 14 }, { x: 13, y: 14 }, { x: 14, y: 14 },
+      { x: 5, y: 6 }, { x: 5, y: 7 }, { x: 5, y: 12 }, { x: 5, y: 13 },
+      { x: 14, y: 6 }, { x: 14, y: 7 }, { x: 14, y: 12 }, { x: 14, y: 13 }
+    ],
+    speedMs: 80,
+    desc: "Grandmaster Tier 1. Targets reach near 700."
+  },
+  {
+    levelNum: 42,
+    targets: [240, 480, 720],
+    startVal: 8,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 3, y: 3 }, { x: 4, y: 3 }, { x: 5, y: 3 }, { x: 6, y: 3 }, { x: 7, y: 3 },
+      { x: 12, y: 3 }, { x: 13, y: 3 }, { x: 14, y: 3 }, { x: 15, y: 3 }, { x: 16, y: 3 },
+      { x: 3, y: 16 }, { x: 4, y: 16 }, { x: 5, y: 16 }, { x: 6, y: 16 }, { x: 7, y: 16 },
+      { x: 12, y: 16 }, { x: 13, y: 16 }, { x: 14, y: 16 }, { x: 15, y: 16 }, { x: 16, y: 16 },
+      { x: 8, y: 8 }, { x: 9, y: 8 }, { x: 10, y: 8 }, { x: 11, y: 8 },
+      { x: 8, y: 11 }, { x: 9, y: 11 }, { x: 10, y: 11 }, { x: 11, y: 11 }
+    ],
+    speedMs: 78,
+    desc: "Double loop cage structure. Rapid decision making."
+  },
+  {
+    levelNum: 43,
+    targets: [256, 512, 768],
+    startVal: 4,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 2, y: 4 }, { x: 4, y: 4 }, { x: 6, y: 4 }, { x: 8, y: 4 }, { x: 11, y: 4 }, { x: 13, y: 4 }, { x: 15, y: 4 }, { x: 17, y: 4 },
+      { x: 2, y: 15 }, { x: 4, y: 15 }, { x: 6, y: 15 }, { x: 8, y: 15 }, { x: 11, y: 15 }, { x: 13, y: 15 }, { x: 15, y: 15 }, { x: 17, y: 15 },
+      { x: 4, y: 7 }, { x: 4, y: 12 }, { x: 15, y: 7 }, { x: 15, y: 12 }
+    ],
+    speedMs: 76,
+    desc: "Grid sieve barrier. Powers of 2 target math."
+  },
+  {
+    levelNum: 44,
+    targets: [270, 540, 810],
+    startVal: 9,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 5, y: 2 }, { x: 6, y: 2 }, { x: 7, y: 2 }, { x: 8, y: 2 }, { x: 9, y: 2 }, { x: 10, y: 2 }, { x: 11, y: 2 }, { x: 12, y: 2 }, { x: 13, y: 2 }, { x: 14, y: 2 },
+      { x: 5, y: 17 }, { x: 6, y: 17 }, { x: 7, y: 17 }, { x: 8, y: 17 }, { x: 9, y: 17 }, { x: 10, y: 17 }, { x: 11, y: 17 }, { x: 12, y: 17 }, { x: 13, y: 17 }, { x: 14, y: 17 },
+      { x: 2, y: 5 }, { x: 2, y: 6 }, { x: 2, y: 7 }, { x: 2, y: 8 }, { x: 2, y: 11 }, { x: 2, y: 12 }, { x: 2, y: 13 }, { x: 2, y: 14 },
+      { x: 17, y: 5 }, { x: 17, y: 6 }, { x: 17, y: 7 }, { x: 17, y: 8 }, { x: 17, y: 11 }, { x: 17, y: 12 }, { x: 17, y: 13 }, { x: 17, y: 14 },
+      { x: 8, y: 8 }, { x: 11, y: 8 }, { x: 8, y: 11 }, { x: 11, y: 11 }
+    ],
+    speedMs: 75,
+    desc: "Fortress gatehouse. Target values exceed 800."
+  },
+  {
+    levelNum: 45,
+    targets: [300, 600, 900],
+    startVal: 10,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 3, y: 3 }, { x: 4, y: 3 }, { x: 5, y: 3 }, { x: 6, y: 3 }, { x: 7, y: 3 }, { x: 8, y: 3 }, { x: 11, y: 3 }, { x: 12, y: 3 }, { x: 13, y: 3 }, { x: 14, y: 3 }, { x: 15, y: 3 }, { x: 16, y: 3 },
+      { x: 3, y: 16 }, { x: 4, y: 16 }, { x: 5, y: 16 }, { x: 6, y: 16 }, { x: 7, y: 16 }, { x: 8, y: 16 }, { x: 11, y: 16 }, { x: 12, y: 16 }, { x: 13, y: 16 }, { x: 14, y: 16 }, { x: 15, y: 16 }, { x: 16, y: 16 },
+      { x: 3, y: 4 }, { x: 3, y: 5 }, { x: 3, y: 6 }, { x: 3, y: 13 }, { x: 3, y: 14 }, { x: 3, y: 15 },
+      { x: 16, y: 4 }, { x: 16, y: 5 }, { x: 16, y: 6 }, { x: 16, y: 13 }, { x: 16, y: 14 }, { x: 16, y: 15 }
+    ],
+    speedMs: 74,
+    desc: "Grandmaster Tier 5. Ultra high target totals."
+  },
+
+  {
+    levelNum: 46,
+    targets: [315, 630, 945],
+    startVal: 7,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 6, y: 3 }, { x: 7, y: 3 }, { x: 8, y: 3 }, { x: 11, y: 3 }, { x: 12, y: 3 }, { x: 13, y: 3 },
+      { x: 3, y: 6 }, { x: 3, y: 7 }, { x: 3, y: 8 }, { x: 3, y: 11 }, { x: 3, y: 12 }, { x: 3, y: 13 },
+      { x: 16, y: 6 }, { x: 16, y: 7 }, { x: 16, y: 8 }, { x: 16, y: 11 }, { x: 16, y: 12 }, { x: 16, y: 13 },
+      { x: 6, y: 16 }, { x: 7, y: 16 }, { x: 8, y: 16 }, { x: 11, y: 16 }, { x: 12, y: 16 }, { x: 13, y: 16 },
+      { x: 7, y: 7 }, { x: 12, y: 7 }, { x: 7, y: 12 }, { x: 12, y: 12 }
+    ],
+    speedMs: 73,
+    desc: "Precision Maze. Extreme mathematical tactical focus required."
+  },
+  {
+    levelNum: 47,
+    targets: [333, 666, 999],
+    startVal: 9,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 2, y: 2 }, { x: 4, y: 2 }, { x: 6, y: 2 }, { x: 8, y: 2 }, { x: 11, y: 2 }, { x: 13, y: 2 }, { x: 15, y: 2 }, { x: 17, y: 2 },
+      { x: 2, y: 17 }, { x: 4, y: 17 }, { x: 6, y: 17 }, { x: 8, y: 17 }, { x: 11, y: 17 }, { x: 13, y: 17 }, { x: 15, y: 17 }, { x: 17, y: 17 },
+      { x: 2, y: 6 }, { x: 2, y: 13 }, { x: 17, y: 6 }, { x: 17, y: 13 },
+      { x: 8, y: 7 }, { x: 11, y: 7 }, { x: 8, y: 12 }, { x: 11, y: 12 }
+    ],
+    speedMs: 72,
+    desc: "Triple digit repdigit targets approaching 1000."
+  },
+  {
+    levelNum: 48,
+    targets: [350, 700, 1050],
+    startVal: 10,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 4, y: 4 }, { x: 5, y: 4 }, { x: 6, y: 4 }, { x: 7, y: 4 }, { x: 8, y: 4 }, { x: 11, y: 4 }, { x: 12, y: 4 }, { x: 13, y: 4 }, { x: 14, y: 4 }, { x: 15, y: 4 },
+      { x: 4, y: 15 }, { x: 5, y: 15 }, { x: 6, y: 15 }, { x: 7, y: 15 }, { x: 8, y: 15 }, { x: 11, y: 15 }, { x: 12, y: 15 }, { x: 13, y: 15 }, { x: 14, y: 15 }, { x: 15, y: 15 },
+      { x: 4, y: 5 }, { x: 4, y: 6 }, { x: 4, y: 7 }, { x: 4, y: 12 }, { x: 4, y: 13 }, { x: 4, y: 14 },
+      { x: 15, y: 5 }, { x: 15, y: 6 }, { x: 15, y: 7 }, { x: 15, y: 12 }, { x: 15, y: 13 }, { x: 15, y: 14 }
+    ],
+    speedMs: 71,
+    desc: "The Citadel. Target value exceeds 1,000."
+  },
+  {
+    levelNum: 49,
+    targets: [384, 768, 1152],
+    startVal: 12,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 2, y: 3 }, { x: 3, y: 3 }, { x: 4, y: 3 }, { x: 5, y: 3 }, { x: 6, y: 3 }, { x: 7, y: 3 }, { x: 12, y: 3 }, { x: 13, y: 3 }, { x: 14, y: 3 }, { x: 15, y: 3 }, { x: 16, y: 3 }, { x: 17, y: 3 },
+      { x: 2, y: 16 }, { x: 3, y: 16 }, { x: 4, y: 16 }, { x: 5, y: 16 }, { x: 6, y: 16 }, { x: 7, y: 16 }, { x: 12, y: 16 }, { x: 13, y: 16 }, { x: 14, y: 16 }, { x: 15, y: 16 }, { x: 16, y: 16 }, { x: 17, y: 16 },
+      { x: 3, y: 6 }, { x: 3, y: 7 }, { x: 3, y: 8 }, { x: 3, y: 11 }, { x: 3, y: 12 }, { x: 3, y: 13 },
+      { x: 16, y: 6 }, { x: 16, y: 7 }, { x: 16, y: 8 }, { x: 16, y: 11 }, { x: 16, y: 12 }, { x: 16, y: 13 },
+      { x: 8, y: 8 }, { x: 11, y: 8 }, { x: 8, y: 11 }, { x: 11, y: 11 }
+    ],
+    speedMs: 70,
+    desc: "Penultimate Apex Challenge. Maximum tick speed!"
+  },
+  {
+    levelNum: 50,
+    targets: [500, 1000, 1500],
+    startVal: 10,
+    allowedOps: ['+', '-', '*'],
+    obstacles: [
+      { x: 3, y: 3 }, { x: 4, y: 3 }, { x: 5, y: 3 }, { x: 6, y: 3 }, { x: 7, y: 3 }, { x: 8, y: 3 }, { x: 11, y: 3 }, { x: 12, y: 3 }, { x: 13, y: 3 }, { x: 14, y: 3 }, { x: 15, y: 3 }, { x: 16, y: 3 },
+      { x: 3, y: 16 }, { x: 4, y: 16 }, { x: 5, y: 16 }, { x: 6, y: 16 }, { x: 7, y: 16 }, { x: 8, y: 16 }, { x: 11, y: 16 }, { x: 12, y: 16 }, { x: 13, y: 16 }, { x: 14, y: 16 }, { x: 15, y: 16 }, { x: 16, y: 16 },
+      { x: 3, y: 4 }, { x: 3, y: 5 }, { x: 3, y: 6 }, { x: 3, y: 7 }, { x: 3, y: 12 }, { x: 3, y: 13 }, { x: 3, y: 14 }, { x: 3, y: 15 },
+      { x: 16, y: 4 }, { x: 16, y: 5 }, { x: 16, y: 6 }, { x: 16, y: 7 }, { x: 16, y: 12 }, { x: 16, y: 13 }, { x: 16, y: 14 }, { x: 16, y: 15 },
+      { x: 7, y: 7 }, { x: 12, y: 7 }, { x: 7, y: 12 }, { x: 12, y: 12 }
+    ],
+    speedMs: 70,
+    desc: "THE ULTIMATE EQUATION. Target 1,500. Achieve arithmetic immortality!"
+  }
+]
