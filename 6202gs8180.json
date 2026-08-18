@@ -1,4 +1,104 @@
 [
+  {
+                    id: 1,
+                    name: "Inception Path",
+                    grid: [
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['ST', 'S:Q:1', 'C:W:2', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'S:Q:0', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'C:E:3', 'GL', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E']
+                    ],
+                    startPos: { x: 0, y: 2 },
+                    startDir: 1,
+                    demoInputs: [
+                        { delay: 250, key: 'Q' },
+                        { delay: 900, key: 'W' },
+                        { delay: 950, key: 'W' },
+                        { delay: 1000, key: 'W' },
+                        { delay: 1600, key: 'Q' },
+                        { delay: 1650, key: 'Q' },
+                        { delay: 1700, key: 'Q' },
+                        { delay: 2200, key: 'E' },
+                        { delay: 2250, key: 'E' },
+                        { delay: 2300, key: 'E' }
+                    ]
+                },
+                {
+                    id: 2,
+                    name: "Synchronization Crossways",
+                    grid: [
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['ST', 'S:A:1', 'C:S:0', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'S:D:0', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'C:A:2', 'S:S:1', 'S:A:1', 'GL', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E']
+                    ],
+                    startPos: { x: 0, y: 2 },
+                    startDir: 1,
+                    demoInputs: [
+                        { delay: 350, key: 'A' },
+                        { delay: 1100, key: 'S' },
+                        { delay: 1800, key: 'D' }
+                    ]
+                },
+                {
+                    id: 3,
+                    name: "Ascendant Calibration",
+                    grid: [
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'C:W:1', 'S:Q:1', 'C:E:2', 'E', 'E', 'E'],
+                        ['E', 'E', 'S:A:0', 'E', 'S:S:0', 'E', 'E', 'E'],
+                        ['ST', 'S:R:1', 'C:A:3', 'E', 'C:W:0', 'S:E:1', 'GL', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E']
+                    ],
+                    startPos: { x: 0, y: 3 },
+                    startDir: 1,
+                    demoInputs: [
+                        { delay: 1000, key: 'A' },
+                        { delay: 1100, key: 'W' },
+                        { delay: 1800, key: 'Q' },
+                        { delay: 2500, key: 'E' },
+                        { delay: 2600, key: 'S' },
+                        { delay: 3300, key: 'W' },
+                        { delay: 4000, key: 'E' }
+                    ]
+                },
+                {
+                    id: 4,
+                    name: "Temporal Pipeline",
+                    grid: [
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['ST', 'S:Q:1', 'C:S:0', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'C:A:3', 'S:D:0', 'C:F:1', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'S:Q:1', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'C:W:2', 'S:E:0', 'GL', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E']
+                    ],
+                    startPos: { x: 0, y: 2 },
+                    startDir: 1,
+                    demoInputs: [
+                        { delay: 300, key: 'Q' },
+                        { delay: 1050, key: 'S' },
+                        { delay: 1750, key: 'A' },
+                        { delay: 2450, key: 'D' },
+                        { delay: 3150, key: 'F' },
+                        { delay: 3850, key: 'Q' },
+                        { delay: 4550, key: 'W' },
+                        { delay: 5250, key: 'E' }
+                    ]
+                },
   // ==========================================
   // SECTORS 6 - 15: NOVICE TO INTERMEDIATE
   // ==========================================
