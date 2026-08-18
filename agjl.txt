@@ -1,0 +1,3 @@
+https://raw.githubusercontent.com/sh0017/DualTrace/refs/heads/main/6202gs8180.json
+https://raw.githubusercontent.com/sh0017/DualTrace/refs/heads/main/6202om8180.json
+https://raw.githubusercontent.com/sh0017/DualTrace/refs/heads/main/6202ss8180.json
