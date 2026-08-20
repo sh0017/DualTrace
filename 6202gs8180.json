@@ -1,5 +1,5 @@
 [
-  {
+                {
                     id: 1,
                     name: "Inception Path",
                     grid: [
@@ -99,7 +99,33 @@
                         { delay: 5250, key: 'E' }
                     ]
                 },
-  // ==========================================
+                {
+                    id: 5,
+                    name: "Cosmic Synchronization Engine",
+                    grid: [
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['ST', 'S:Q:1', 'S:W:1', 'C:E:2', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'S:R:1', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'C:Q:0', 'C:A:3', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'S:S:1', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'C:D:3', 'S:F:0', 'S:W:0', 'GL', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+                        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E']
+                    ],
+                    startPos: { x: 0, y: 1 },
+                    startDir: 1,
+                    demoInputs: [
+                        { delay: 800, key: 'E' },
+                        { delay: 1500, key: 'R' },
+                        { delay: 2200, key: 'A' },
+                        { delay: 2900, key: 'Q' },
+                        { delay: 3600, key: 'S' },
+                        { delay: 4300, key: 'D' },
+                        { delay: 5000, key: 'F' },
+                        { delay: 5700, key: 'W' }
+                    ]
+                },
+				// ==========================================
   // SECTORS 6 - 15: NOVICE TO INTERMEDIATE
   // ==========================================
   {
@@ -123,7 +149,7 @@
     name: "Serpentine Switch",
     grid: [
       ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
-      ['E', 'E', 'ST', 'S:A:1', 'E', 'E', 'E', 'E'],
+      ['E', 'E', 'ST', 'C:A:1', 'E', 'E', 'E', 'E'],
       ['E', 'E', 'C:S:0', 'C:D:2', 'E', 'E', 'E', 'E'],
       ['E', 'E', 'S:A:0', 'E', 'E', 'E', 'E', 'E'],
       ['E', 'E', 'C:F:3', 'S:S:0', 'GL', 'E', 'E', 'E'],
@@ -132,16 +158,16 @@
       ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E']
     ],
     startPos: { x: 2, y: 1 },
-    startDir: 2
+    startDir: 1
   },
   {
     id: 8,
     name: "Dual Glyph Divergence",
     grid: [
       ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
-      ['ST', 'S:Q:1', 'C:Q:1', 'E', 'E', 'E', 'E', 'E'],
+      ['ST', 'S:W:1', 'C:Q:1', 'E', 'E', 'E', 'E', 'E'],
       ['E', 'E', 'S:W:1', 'E', 'E', 'E', 'E', 'E'],
-      ['E', 'E', 'C:W:3', 'S:E:0', 'C:E:0', 'E', 'E', 'E'],
+      ['E', 'E', 'C:Q:3', 'S:E:0', 'C:E:0', 'E', 'E', 'E'],
       ['E', 'E', 'E', 'E', 'S:R:1', 'E', 'E', 'E'],
       ['E', 'E', 'E', 'E', 'GL', 'E', 'E', 'E'],
       ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
@@ -287,7 +313,7 @@
     name: "Symmetric Splitter",
     grid: [
       ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
-      ['E', 'E', 'ST', 'S:A:1', 'E', 'E', 'E', 'E'],
+      ['E', 'E', 'ST', 'C:A:1', 'E', 'E', 'E', 'E'],
       ['E', 'E', 'C:S:0', 'C:D:2', 'E', 'E', 'E', 'E'],
       ['E', 'C:F:0', 'C:A:2', 'C:S:0', 'C:D:1', 'E', 'E', 'E'],
       ['E', 'S:F:1', 'E', 'E', 'S:A:1', 'E', 'E', 'E'],
@@ -296,7 +322,7 @@
       ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E']
     ],
     startPos: { x: 2, y: 1 },
-    startDir: 2
+    startDir: 1
   },
   {
     id: 18,
@@ -914,4 +940,4 @@
     startPos: { x: 0, y: 0 },
     startDir: 1
   }
-]
+            ]
